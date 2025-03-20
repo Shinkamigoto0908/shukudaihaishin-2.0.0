@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>宿題配信のお知らせ</title>
+  <style>
+    /* 背景（モーダルを目立たせる半透明効果） */
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      background-color: rgba(0, 0, 0, 0.5); /* 半透明の黒背景 */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh; /* 全画面表示 */
+      margin: 0;
+    }
+
+    /* モーダルボックスのスタイル */
+    .alert-box {
+      background-color: white;
+      border-radius: 45px; /* 丸みを持たせたデザイン */
+      padding: 30px 40px;
+      text-align: center;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* 影の追加で立体感 */
+      width: 80%;
+      max-width: 400px;
+      opacity: 0; /* フェードイン初期状態 */
+      transform: scale(0.9); /* 開始時に縮小した状態 */
+      animation: fadeIn 0.5s ease-out forwards; /* フェードイン効果 */
+    }
+
+    /* 見出しのスタイル */
+    h1 {
+      color: black;
+      margin-bottom: 20px;
+      font-size: 24px; /* 大きな見出し文字 */
+      font-weight: bold;
+    }
+
+    /* 説明文のスタイル */
+    p {
+      color: black;
+      font-size: 18px;
+      margin-bottom: 20px;
+      line-height: 1.6;
+    }
+
+    /* 横線（区切り線） */
+    hr {
+      border: none;
+      border-top: 1px solid #e0e0e0; /* シンプルな線 */
+      margin: 20px 0;
+    }
+
+    /* ボタンコンテナ（レイアウト調整） */
+    .button-container {
+      display: flex; /* 横並び */
+      align-items: center;
+      gap: 10px;
+      justify-content: center;
+      position: relative;
+    }
+
+    /* ボタン間の縦線 */
+    .button-container::before {
+      content: "";
+      width: 1px;
+      height: 40px;
+      background-color: #e0e0e0; /* 縦線の色 */
+      position: absolute;
+      left: 50%; /* 中央に配置 */
+      transform: translateX(-50%);
+    }
+
+    /* ボタンのスタイル */
+    button {
+      padding: 15px 30px;
+      font-size: 22px; /* ボタン内の文字サイズを拡大 */
+      cursor: pointer;
+      background-color: transparent;
+      color: #007BFF; /* 青い文字 */
+      border: none; /* 枠線なし */
+    }
+
+    /* ボタンのホバー時効果 */
+    button:hover {
+      text-decoration: underline; /* 下線が表示される */
+    }
+
+    /* フェードインアニメーション */
+    @keyframes fadeIn {
+      0% {
+        opacity: 0; /* 開始時透明 */
+        transform: scale(0.9); /* 少し縮小 */
+      }
+      100% {
+        opacity: 1; /* 完全表示 */
+        transform: scale(1); /* 元のサイズ */
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="alert-box">
+    <h1>今年度の宿題配信は終了しました</h1>
+    <p>令和七年度版への更新作業中です。<br>サービス再開時期：2025年4月10日</p>
+    <hr>
+    <div class="button-container">
+      <button onclick="location.href='home.html'">ホームに戻る</button>
+      <button onclick="location.reload()">再読み込み</button>
+    </div>
+  </div>
+</body>
+</html>
